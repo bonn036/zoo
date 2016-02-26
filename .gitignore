@@ -49,3 +49,8 @@ Temporary Items
 /.idea
 /build
 /gradle
+/zoo/build
+/local.properties
+/gradlew
+/gradlew.bat
+/LICENSE

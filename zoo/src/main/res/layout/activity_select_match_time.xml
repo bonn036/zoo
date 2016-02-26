@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:numberpicker="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/about_item_selector"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/about_item_selector"
+        android:orientation="horizontal">
+
+        <com.mmnn.bonn036.zoo.view.wheel.NumberPicker
+            android:id="@+id/slelect_data_accurate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="60dp"
+            android:orientation="vertical"
+            numberpicker:internalLayout="@layout/number_picker_with_selector_wheel"
+            numberpicker:internalMaxHeight="210dp"
+            numberpicker:internalMaxTextSize="18sp"
+            numberpicker:internalMinTextSize="14sp"
+            numberpicker:internalMinWidth="300dp"
+            numberpicker:internalTextColor="@android:color/black"
+            numberpicker:middleTextColor="@color/red"
+            numberpicker:solidColor="@android:color/transparent" />
+
+
+        <com.mmnn.bonn036.zoo.view.wheel.NumberPicker
+            android:id="@+id/slelect_time_accurate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="60dp"
+            android:orientation="vertical"
+            numberpicker:internalLayout="@layout/number_picker_with_selector_wheel"
+            numberpicker:internalMaxHeight="210dp"
+            numberpicker:internalMaxTextSize="18sp"
+            numberpicker:internalMinTextSize="14sp"
+            numberpicker:internalMinWidth="300dp"
+            numberpicker:internalTextColor="@android:color/black"
+            numberpicker:middleTextColor="@color/red"
+            numberpicker:solidColor="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/line_color" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/about_item_selector"
+        android:orientation="horizontal">
+
+        <com.qutiqiu.yueqiu.view.wheel.NumberPicker
+            android:id="@+id/free_data_accurate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="60dp"
+            android:orientation="vertical"
+            numberpicker:internalLayout="@layout/number_picker_with_selector_wheel"
+            numberpicker:internalMaxHeight="210dp"
+            numberpicker:internalMaxTextSize="18sp"
+            numberpicker:internalMinTextSize="14sp"
+            numberpicker:internalMinWidth="300dp"
+            numberpicker:internalTextColor="@android:color/black"
+            numberpicker:middleTextColor="@color/red"
+            numberpicker:solidColor="@android:color/transparent" />
+
+        <com.qutiqiu.yueqiu.view.wheel.NumberPicker
+            android:id="@+id/free_time_accurate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="60dp"
+            android:orientation="vertical"
+            numberpicker:internalLayout="@layout/number_picker_with_selector_wheel"
+            numberpicker:internalMaxHeight="210dp"
+            numberpicker:internalMaxTextSize="18sp"
+            numberpicker:internalMinTextSize="14sp"
+            numberpicker:internalMinWidth="300dp"
+            numberpicker:internalTextColor="@android:color/black"
+            numberpicker:middleTextColor="@color/red"
+            numberpicker:solidColor="@android:color/transparent" />
+
+    </LinearLayout>
+
+</LinearLayout>

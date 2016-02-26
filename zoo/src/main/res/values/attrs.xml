@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension" />
+        <attr name="edge_flag">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="all" value="3" />
+        </attr>
+        <attr name="shadow_left" format="reference" />
+        <attr name="shadow_right" format="reference" />
+        <attr name="shadow_bottom" format="reference" />
+    </declare-styleable>
+
+    <attr name="SwipeBackLayoutStyle" format="reference" />
+
+    <declare-styleable name="LineWrapLayout">
+        <attr name="horizontal_spacing" format="dimension" />
+        <attr name="vertical_spacing" format="dimension" />
+    </declare-styleable>
+
+    <attr name="numberPickerStyle" format="reference" />
+
+    <declare-styleable name="NumberPicker">
+        <!-- @hide Color for the solid color background if such for optimized rendering. -->
+        <attr name="solidColor" format="color|reference" />
+        <!-- @hide The divider for making the selection area. -->
+        <attr name="selectionDivider" format="reference" />
+        <!-- @hide The height of the selection divider. -->
+        <attr name="selectionDividerHeight" format="dimension" />
+        <!-- @hide The distance between the two selection dividers. -->
+        <attr name="selectionDividersDistance" format="dimension" />
+        <!-- @hide The min height of the NumberPicker. -->
+        <attr name="internalMinHeight" format="dimension" />
+        <!-- @hide The max height of the NumberPicker. -->
+        <attr name="internalMaxHeight" format="dimension" />
+        <!-- @hide The min width of the NumberPicker. -->
+        <attr name="internalMinWidth" format="dimension" />
+        <!-- @hide The max width of the NumberPicker. -->
+        <attr name="internalMaxWidth" format="dimension" />
+        <!-- @hide The layout of the number picker. -->
+        <attr name="internalLayout" format="reference" />
+        <!-- @hide The drawable for pressed virtual (increment/decrement) buttons. -->
+        <attr name="virtualButtonPressedDrawable" format="reference" />
+        <attr name="internalTextColor" format="color|reference" />
+        <attr name="internalMaxTextSize" format="dimension" />
+        <attr name="internalMinTextSize" format="dimension" />
+        <attr name="selectorWheelItemCount" format="integer" />
+        <attr name="middleTextColor" format="color|reference" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout">
+        <attr name="horizontalSpacing" format="dimension" />
+        <attr name="verticalSpacing" format="dimension" />
+        <attr name="flow_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="debugDraw" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout_LayoutParams">
+        <attr name="layout_newLine" format="boolean" />
+        <attr name="layout_horizontalSpacing" format="dimension" />
+        <attr name="layout_verticalSpacing" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ToggleButton">
+        <attr name="bordWidth" format="dimension" />
+        <attr name="offBorderColor" format="reference|color" />
+        <attr name="offColor" format="reference|color" />
+        <attr name="onColor" format="reference|color" />
+        <attr name="spotColor" format="reference|color" />
+        <attr name="animate" format="reference|boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PullToZoomView">
+        <attr name="headerView" format="reference" />
+        <attr name="contentView" format="reference" />
+        <attr name="zoomView" format="reference" />
+        <attr name="headerHeight" format="dimension" />
+        <attr name="isHeaderParallax" format="boolean" />
+        <attr name="dragMarginTop" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="AlphabetFastIndexer">
+        <attr name="indexerTable" format="reference"/>
+        <attr name="indexerTextSize" format="dimension|reference"/>
+        <attr name="indexerTextColor" format="color|reference"/>
+        <attr name="indexerTextActivatedColor" format="color|reference"/>
+        <attr name="indexerTextHighlightColor" format="color|reference"/>
+        <attr name="indexerTextHighligtBackground" format="reference"/>
+        <attr name="indexerBackground" format="reference"/>
+        <attr name="overlayBackground" format="reference"/>
+        <attr name="overlayMarginLeft" format="dimension|reference"/>
+        <attr name="overlayMarginTop" format="dimension|reference"/>
+        <attr name="overlayTextSize" format="dimension|reference"/>
+        <attr name="overlayTextColor" format="color|reference"/>
+    </declare-styleable>
+
+</resources>

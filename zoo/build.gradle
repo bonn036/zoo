@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+android {
+    useLibrary 'org.apache.http.legacy'
+    signingConfigs {
+        config {
+            storeFile file('D:/Github/Zoo/zoo/mmnn.keystore')
+            keyAlias 'zoo'
+            keyPassword 'mmnnzoo'
+            storePassword 'mmnnstore'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.mmnn.bonn036.zoo"
+        minSdkVersion 19
+        targetSdkVersion 23
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+            jniDebuggable true
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+}

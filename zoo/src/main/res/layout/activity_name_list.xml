@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true" >
+
+    <com.xiaomi.mitv.phone.remotecontroller.ir.ui.BackActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.xiaomi.mitv.phone.remotecontroller.epg.ui.FlexibleListView
+        android:id="@+id/main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/actionbar"
+        android:scrollbars="none" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/actionbar"
+        android:layout_marginBottom="@dimen/margin_102"
+        android:layout_marginTop="@dimen/margin_92">
+
+        <com.xiaomi.mitv.phone.remotecontroller.ui.AlphabetFastIndexer xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/listview_indexer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            app:indexerTextColor="@color/black_20_percent"
+            app:indexerTextSize="@dimen/text_size_30"
+            app:overlayTextSize="@dimen/text_size_24" />
+
+    </FrameLayout>
+
+</RelativeLayout>

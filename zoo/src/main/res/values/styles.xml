@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.NoTitleBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="circle_progressbar_large">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDrawable">@drawable/progressbar_drawable</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:indeterminateDuration">1000</item>
+        <item name="android:background">@drawable/pic_refresh_bg</item>
+    </style>
+
+    <!-- Dialog中的短按钮样式 -->
+    <style name="Dialog.Button.Primary" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dialog_button_height</item>
+        <item name="android:background">@drawable/light_item_bg_selector</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

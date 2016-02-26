@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button_add_shortcut"
+        android:layout_width="@dimen/main_page_button_width"
+        android:layout_height="@dimen/main_page_button_height"
+        android:text="@string/add_shortcut" />
+
+    <Button
+        android:id="@+id/button_del_shortcut"
+        android:layout_width="@dimen/main_page_button_width"
+        android:layout_height="@dimen/main_page_button_height"
+        android:text="@string/del_shortcut" />
+
+</LinearLayout>

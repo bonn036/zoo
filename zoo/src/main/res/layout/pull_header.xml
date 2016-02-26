@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/pull_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:gravity="bottom"
+        tools:ignore="Suspicious0dp">
+
+        <ImageView
+            android:id="@+id/img_bkg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:id="@+id/pull_header_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/empty_view"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_180"
+                    android:layout_gravity="left|bottom">
+
+                    <ProgressBar
+                        android:id="@+id/pull_header_prog"
+                        style="@style/circle_progressbar_large"
+                        android:layout_width="@dimen/margin_64"
+                        android:layout_height="@dimen/margin_67"
+                        android:layout_gravity="center_vertical"
+                        android:indeterminate="true"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/pull_header_indc"
+                        style="@style/circle_progressbar_large"
+                        android:layout_width="@dimen/margin_64"
+                        android:layout_height="@dimen/margin_67"
+                        android:layout_gravity="center_vertical"
+                        android:indeterminate="true" />
+                    <!--
+                                        <ImageView
+                                            android:id="@+id/pull_header_indc"
+                                            android:layout_width="@dimen/margin_64"
+                                            android:layout_height="@dimen/margin_67"
+                                            android:layout_gravity="center_vertical"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/ic_refresh_01" />
+                                             -->
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/pull_header_txt_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_180"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginLeft="@dimen/margin_52"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pull_header_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/release_to_refresh"
+                        android:textColor="@color/pull_header_strong_text_color"
+                        android:textSize="@dimen/text_size_36" />
+
+                    <TextView
+                        android:id="@+id/pull_header_txt_line2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pull_header_strong_text_color"
+                        android:textSize="@dimen/text_size_36"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

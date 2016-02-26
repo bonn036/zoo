@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- blacks -->
+    <color name="black_80_percent">#cc000000</color>
+    <color name="black_70_percent">#b2000000</color>
+    <color name="black_60_percent">#99000000</color>
+    <color name="black_50_percent">#7f000000</color>
+    <color name="black_40_percent">#66000000</color>
+    <color name="black_30_percent">#4c000000</color>
+    <color name="black_10_percent">#1a000000</color>
+    <color name="black_20_percent">#33000000</color>
+    <color name="black_6_percent">#0f000000</color>
+    <color name="black_0_percent">#00000000</color>
+
+    <!-- whites -->
+    <color name="white_5_percent">#0dffffff</color>
+    <color name="white_6_percent">#0fffffff</color>
+    <color name="white_10_percent">#19ffffff</color>
+    <color name="white_15_percent">#26ffffff</color>
+    <color name="white_20_percent">#33ffffff</color>
+    <color name="white_30_percent">#4cffffff</color>
+    <color name="white_40_percent">#66FFFFFF</color>
+    <color name="white_50_percent">#80FFFFFF</color>
+    <color name="white_60_percent">#99ffffff</color>
+    <color name="white_70_percent">#b2ffffff</color>
+    <color name="white_80_percent">#ccffffff</color>
+    <color name="white_90_percent">#e5ffffff</color>
+
+    <color name="purple">#9220f3</color>
+    <color name="pink">#ff9393</color>
+    <color name="yellow">#ffbc74</color>
+    <color name="blue">#7ec1ff</color>
+    <color name="red">#e62f17</color>
+
+    <!-- Text color -->
+    <color name="primary_text_color">#4c4c4c</color>
+    <color name="secondary_text_color">#b2b2b2</color>
+    <color name="text_hint_color">#808080</color>
+
+    <!-- Background color -->
+    <color name="background">#f5f5f5</color>
+    <!-- Line color -->
+    <color name="line_color">#e5e5e5</color>
+
+    <!-- 浅色List Item背景色 -->
+    <color name="light_item_normal_bg">#ffffff</color>
+    <!-- 浅色List Item按压颜色 -->
+    <color name="light_item_pressed_bg">#eeeeee</color>
+
+    <color name="pull_header_strong_text_color">#ff2f2f2f</color>
+
+    <color name="about_item_select">#f4f4f4</color>
+
+</resources>

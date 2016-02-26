@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="#fff" />
+
+    <stroke
+        android:width="1px"
+        android:color="#c5c5c5" />
+
+    <corners
+        android:bottomLeftRadius="@dimen/circle_conner_radius"
+        android:bottomRightRadius="@dimen/circle_conner_radius"
+        android:topLeftRadius="@dimen/circle_conner_radius"
+        android:topRightRadius="@dimen/circle_conner_radius" />
+
+</shape>

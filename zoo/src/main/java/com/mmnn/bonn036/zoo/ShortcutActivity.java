@@ -32,7 +32,8 @@ public class ShortcutActivity extends Activity {
         addShortcutButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                createShortcut();
+                finish();
+//                createShortcut();
             }
         });
         Button delShortcutButton = (Button) findViewById(R.id.button_del_shortcut);

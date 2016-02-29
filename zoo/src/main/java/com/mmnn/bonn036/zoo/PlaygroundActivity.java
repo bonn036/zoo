@@ -16,7 +16,9 @@ import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.mmnn.bonn036.zoo.utils.DateTimeUtils;
 import com.mmnn.bonn036.zoo.utils.DeviceUtils;
+import com.mmnn.bonn036.zoo.view.widget.PullDownRefreshListView;
 
 import java.util.Calendar;
 
@@ -47,7 +49,7 @@ public class PlaygroundActivity extends Activity {
         lp.gravity = Gravity.CENTER;
         mPlayGround.addView(mElephant, lp);
 //
-//        PullDownRefreshListView listView = (PullDownRefreshListView) findViewById(R.id.main_list);
+        PullDownRefreshListView listView = (PullDownRefreshListView) findViewById(R.id.main_list);
 //
 //        String[] adapterData = new String[]{"Afghanistan", "Albania", "Algeria",
 //                "American Samoa", "Andorra", "Angola", "Anguilla",
@@ -57,7 +59,7 @@ public class PlaygroundActivity extends Activity {
 //                "Benin", "Bermuda", "Bhutan", "Bolivia",
 //                "Bosnia and Herzegovina", "Botswana", "Bouvet Island"};
 //        listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, adapterData));
-//        listView.setVisibility(View.GONE);
+        listView.setVisibility(View.GONE);
     }
 
     @Override
@@ -80,10 +82,13 @@ public class PlaygroundActivity extends Activity {
     }
 
     private void test() {
+        startActivity(new Intent(this, ShortcutActivity.class));
         Log.d(TAG, "========test=========");
         System.out.println(Calendar.getInstance().getTime());
         System.out.println(Calendar.getInstance().getTimeInMillis());
         System.out.println(System.currentTimeMillis());
+        System.out.println(DateTimeUtils.addWeekDay("2016-02-28 16:00"));
+        ;
     }
 
     private void gotoM() {

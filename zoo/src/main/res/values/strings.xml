@@ -12,6 +12,7 @@
     <string name="title_sns_share">分享</string>
     <string name="shortcut">快捷方式</string>
     <string name="webview">WebView</string>
+    <string name="qrcode">二维码</string>
 
     <string name="add_shortcut">创建快捷方式</string>
     <string name="del_shortcut">删除快捷方式</string>

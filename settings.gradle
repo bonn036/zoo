@@ -1,1 +1,1 @@
-include ':Zoo'
+include ':Zoo', ':zxing'

@@ -88,7 +88,6 @@ public class PlaygroundActivity extends Activity {
         System.out.println(Calendar.getInstance().getTimeInMillis());
         System.out.println(System.currentTimeMillis());
         System.out.println(DateTimeUtils.addWeekDay("2016-02-28 16:00"));
-        ;
     }
 
     private void gotoM() {

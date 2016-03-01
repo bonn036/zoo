@@ -53,6 +53,9 @@ public class MainActivity extends Activity {
                     case 4:
                         startActivity(new Intent(MainActivity.this, WebViewActivity.class));
                         break;
+                    case 5:
+                        startActivity(new Intent(MainActivity.this, QRActivity.class));
+                        break;
                     default:
                         break;
                 }
@@ -67,6 +70,7 @@ public class MainActivity extends Activity {
         titleList.add(getString(R.string.title_sns_share));
         titleList.add(getString(R.string.shortcut));
         titleList.add(getString(R.string.webview));
+        titleList.add(getString(R.string.qrcode));
         return titleList;
     }
 

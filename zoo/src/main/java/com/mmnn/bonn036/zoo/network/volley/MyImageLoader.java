@@ -7,6 +7,7 @@ import android.util.LruCache;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
 
 public class MyImageLoader extends ImageLoader {
 
@@ -25,7 +26,8 @@ public class MyImageLoader extends ImageLoader {
             synchronized (MyImageLoader.class) {
                 if (sIntance == null) {
                     ImageLruCache cache = new ImageLruCache(MAX_SIZE);
-                    sIntance = new MyImageLoader(VolleyHelper.getRequestQueue(), cache);
+//                    sIntance = new MyImageLoader(VolleyHelper.getRequestQueue(), cache);
+                    sIntance = new MyImageLoader(Volley.newRequestQueue(context.getApplicationContext()), cache);
                 }
             }
         }

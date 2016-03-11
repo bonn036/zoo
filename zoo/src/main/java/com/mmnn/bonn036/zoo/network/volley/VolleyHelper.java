@@ -45,7 +45,7 @@ public class VolleyHelper {
     }
 
     public void cancelRequest(Object tag) {
-        getRequestQueue().cancelAll(tag);
+        sRequestQueue.cancelAll(tag);
     }
 
     public static class SimpleListener implements Response.Listener<byte[]> {

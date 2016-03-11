@@ -18,6 +18,7 @@ import android.widget.ImageView;
 
 import com.mmnn.bonn036.zoo.utils.DateTimeUtils;
 import com.mmnn.bonn036.zoo.utils.DeviceUtils;
+import com.mmnn.bonn036.zoo.view.test.Sea;
 import com.mmnn.bonn036.zoo.view.widget.PullDownRefreshListView;
 
 import java.util.Calendar;
@@ -25,9 +26,9 @@ import java.util.Calendar;
 public class PlaygroundActivity extends Activity {
 
     private final static String TAG = PlaygroundActivity.class.getCanonicalName();
-    private final static String CONRTOLLER_AUTHORITY = "content://com.xiaomi.mitv.phone.remotecontroller.provider.LockScreenProvider";
+    private final static String CONTROLLER_AUTHORITY = "content://com.xiaomi.mitv.phone.remotecontroller.provider.LockScreenProvider";
     private final static String MI_WEATHER = "/mi_weather";
-    private FrameLayout mPlayGround;
+    private Sea mPlayGround;
     private ImageView mElephant;
 
     @Override
@@ -38,10 +39,12 @@ public class PlaygroundActivity extends Activity {
 
     private void initView() {
         setContentView(R.layout.activity_playground);
-        View rootView = getWindow().getDecorView();
+//        View rootView = getWindow().getDecorView();
+//        mPlayGround = (FrameLayout) rootView;
 //		View rootView = ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0);
 //		View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
-        mPlayGround = (FrameLayout) rootView;
+
+        mPlayGround = (Sea) findViewById(R.id.sea);
 
         mElephant = new ImageView(this);
         mElephant.setImageResource(R.mipmap.ic_launcher);
@@ -82,12 +85,20 @@ public class PlaygroundActivity extends Activity {
     }
 
     private void test() {
-        startActivity(new Intent(this, ShortcutActivity.class));
-        Log.d(TAG, "========test=========");
+//        startActivity(new Intent(this, ShortcutActivity.class));
+
+        Log.d(TAG, "========test=========" + DateTimeUtils.getCurFormattedDateTime());
         System.out.println(Calendar.getInstance().getTime());
         System.out.println(Calendar.getInstance().getTimeInMillis());
         System.out.println(System.currentTimeMillis());
         System.out.println(DateTimeUtils.addWeekDay("2016-02-28 16:00"));
+
+        System.out.println(mElephant.getScaleX() + " " + mElephant.getScaleY());
+        System.out.println(mElephant.getScrollX() + " " + mElephant.getScrollY());
+        System.out.println(mElephant.getTranslationX() + " " + mElephant.getTranslationY());
+        System.out.println(mElephant.getLeft() + " " + mElephant.getTop() + " " + mElephant.getRight() + " " + mElephant.getBottom());
+
+        mElephant.setScrollX(20);
     }
 
     private void gotoM() {
@@ -119,7 +130,7 @@ public class PlaygroundActivity extends Activity {
     private void testProvider() {
         try {
             String[] projection = new String[]{"controller_id", "controller_name", "device_type", "intent_action"};
-            Cursor cursor = getContentResolver().query(Uri.parse(CONRTOLLER_AUTHORITY + MI_WEATHER), projection, null, null, null);
+            Cursor cursor = getContentResolver().query(Uri.parse(CONTROLLER_AUTHORITY + MI_WEATHER), projection, null, null, null);
             Log.d(TAG, "cursor = " + cursor);
             if (cursor != null) {
                 cursor.moveToFirst();

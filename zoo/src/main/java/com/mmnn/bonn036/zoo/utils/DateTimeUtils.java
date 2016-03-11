@@ -23,6 +23,13 @@ public class DateTimeUtils {
         return dateFormat.format(calendar.getTime());
     }
 
+    public static String getCurFormattedDateTime() {
+        Calendar calendar = Calendar.getInstance();
+        String format = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.format(calendar.getTime());
+    }
+
     public static String addWeekDay(String formattedDate) {
         if (TextUtils.isEmpty(formattedDate)) {
             return null;

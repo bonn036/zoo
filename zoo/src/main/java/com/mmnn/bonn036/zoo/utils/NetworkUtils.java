@@ -51,7 +51,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 
-public class NetworkUtil {
+public class NetworkUtils {
 
     public static final int CONNECT_TIMEOUT = 30 * 1000;
     public static final int READ_TIMEOUT = 15 * 1000;
@@ -60,7 +60,7 @@ public class NetworkUtil {
     public static final String METHOD_GET = "GET";
     public static final String METHOD_POST = "POST";
     public static final String METHOD_DELETE = "DELETE";
-    private static final String TAG = "NetworkUtil";
+    private static final String TAG = "NetworkUtils";
 
     /**
      * 向服务端提交HttpPost请求 设置为30秒钟连接超时，发送数据不超时；
@@ -232,7 +232,7 @@ public class NetworkUtil {
 
         List<NameValuePair> encrytParams = null;
         try {
-            encrytParams = NetworkUtil.encryptParams(params, security);
+            encrytParams = NetworkUtils.encryptParams(params, security);
         } catch (CipherException e1) {
             e1.printStackTrace();
         }

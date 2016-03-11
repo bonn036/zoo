@@ -5,6 +5,15 @@
     <com.mmnn.bonn036.zoo.view.widget.PullDownRefreshListView
         android:id="@+id/main_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.mmnn.bonn036.zoo.view.test.Sea
+        android:id="@+id/sea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+    </com.mmnn.bonn036.zoo.view.test.Sea>
 
 </FrameLayout>

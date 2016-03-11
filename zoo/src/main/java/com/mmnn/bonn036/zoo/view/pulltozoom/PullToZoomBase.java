@@ -41,6 +41,7 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
     private float mZoomInitialMotionY;
     private float mZoomInitialMotionX;
     private OnPullZoomListener onPullZoomListener;
+    private OnScrollListener onScrollListener;
     private VelocityTracker mVelocityTracker;
     private int mMinimumFlingVelocity;
     private int mMaxVelocity;
@@ -61,8 +62,8 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
 
         ViewConfiguration config = ViewConfiguration.get(context);
         mTouchSlop = config.getScaledTouchSlop();
-        mMaxVelocity = ViewConfiguration.get(context).getMaximumFlingVelocity();
-        mMinimumFlingVelocity = 300;//ViewConfiguration.getMinimumFlingVelocity();
+        mMaxVelocity = config.getScaledMaximumFlingVelocity();
+        mMinimumFlingVelocity = 300;//config.getScaledMinimumFlingVelocity();
         DisplayMetrics localDisplayMetrics = new DisplayMetrics();
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(localDisplayMetrics);
         mScreenHeight = localDisplayMetrics.heightPixels;
@@ -99,6 +100,10 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
 
     public void setOnPullZoomListener(OnPullZoomListener onPullZoomListener) {
         this.onPullZoomListener = onPullZoomListener;
+    }
+
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.onScrollListener = onScrollListener;
     }
 
     @Override
@@ -173,21 +178,28 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         if (action != MotionEvent.ACTION_DOWN && mIsBeingDragged) {
             return true;
         }
+
         switch (action) {
             case MotionEvent.ACTION_MOVE: {
                 final float y = event.getY(), x = event.getX();
-                final float diff, oppositeDiff, absDiff;
-                diff = y - mLastMotionY;
+                final float deltaY, deltaX, absDeltaY;
+                deltaY = y - mLastMotionY;
 
-                if (isReadyForPullStart() || (diff > 0 && getContentView() != null && !canScroll(getContentView(), true, diff, x, y))) {
+                if (isReadyForPullStart() || (deltaY > 0 && getContentView() != null && !canScroll(getContentView(), true, deltaY, x, y))) {
                     // We need to use the correct values, based on scroll
                     // direction
-                    oppositeDiff = x - mLastMotionX;
-                    absDiff = Math.abs(diff);
-                    if (absDiff > mTouchSlop && absDiff > Math.abs(oppositeDiff)) {
+                    deltaX = x - mLastMotionX;
+                    absDeltaY = Math.abs(deltaY);
+                    if (absDeltaY > mTouchSlop && absDeltaY > Math.abs(deltaX)) {
                         mLastMotionY = y;
                         mLastMotionX = x;
                         mIsBeingDragged = true;
+                    }
+                }
+                if (deltaY != 0 && onScrollListener != null) {
+                    onScrollListener.onScroll(deltaY);
+                    if (deltaY < 0 && !canScroll(getContentView(), true, deltaY, x, y)) {
+                        onScrollListener.onScrollToBottom();
                     }
                 }
                 break;
@@ -218,6 +230,7 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         }
 
         switch (event.getAction()) {
+
             case MotionEvent.ACTION_MOVE: {
                 if (mIsBeingDragged) {
                     moveDistance(event.getY() - mLastMotionY);
@@ -269,7 +282,7 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
                     VelocityTracker verTracker = mVelocityTracker;
                     verTracker.computeCurrentVelocity(1000, mMaxVelocity);
                     final float velocityY = verTracker.getYVelocity(mPointerId);
-                    if(Math.abs(velocityY) > mMinimumFlingVelocity){
+                    if (Math.abs(velocityY) > mMinimumFlingVelocity) {
                         fastExpands(velocityY > 0 && (event.getY() - mInitialMotionY) > 0);
                     }
                     releaseVelocityTracker();
@@ -306,7 +319,7 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         }
     }
 
-    protected boolean canScroll(View v, boolean checkV, float dy, float x, float y) {
+    protected boolean canScroll(View v, boolean checkV, float deltaY, float x, float y) {
         if (v instanceof ViewGroup) {
             final ViewGroup group = (ViewGroup) v;
             final int scrollX = v.getScrollX();
@@ -314,14 +327,14 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
             final int count = group.getChildCount();
             for (int i = count - 1; i >= 0; i--) {
                 final View child = group.getChildAt(i);
-                if (x + scrollX >= child.getLeft() && x + scrollX < child.getRight() && y + scrollY >= child.getTop()
-                        && y + scrollY < child.getBottom()
-                        && canScroll(child, true, dy, x + scrollX - child.getLeft(), y + scrollY - child.getTop())) {
+                if (x >= child.getLeft() - scrollX && x < child.getRight() - scrollX
+                        && y >= child.getTop() - scrollY && y < child.getBottom() - scrollY
+                        && canScroll(child, true, deltaY, x + scrollX - child.getLeft(), y + scrollY - child.getTop())) {
                     return true;
                 }
             }
         }
-        return checkV && v.canScrollVertically((int) -dy);
+        return checkV && v.canScrollVertically((int) -deltaY);
     }
 
     private void acquireVelocityTracker(final MotionEvent event) {
@@ -357,5 +370,11 @@ public abstract class PullToZoomBase<T extends View> extends LinearLayout implem
         void onPullZooming(int newScrollValue);
 
         void onPullZoomEnd();
+    }
+
+    public interface OnScrollListener {
+        void onScroll(float deltaY);
+
+        void onScrollToBottom();
     }
 }

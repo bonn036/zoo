@@ -4,6 +4,7 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 
@@ -70,6 +71,7 @@ public class DeviceUtils {
     public static Rect getScreenSize(Activity activity) {
         DisplayMetrics dm = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        Configuration config = activity.getResources().getConfiguration();
         return new Rect(0, 0, dm.widthPixels, dm.heightPixels);
     }
 }

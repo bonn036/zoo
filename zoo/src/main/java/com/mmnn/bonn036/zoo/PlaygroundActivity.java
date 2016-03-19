@@ -86,7 +86,7 @@ public class PlaygroundActivity extends Activity {
 
     private void test() {
 //        startActivity(new Intent(this, ShortcutActivity.class));
-
+        DeviceUtils.getScreenSize(this);
         Log.d(TAG, "========test=========" + DateTimeUtils.getCurFormattedDateTime());
         System.out.println(Calendar.getInstance().getTime());
         System.out.println(Calendar.getInstance().getTimeInMillis());

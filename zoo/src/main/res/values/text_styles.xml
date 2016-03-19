@@ -6,6 +6,11 @@
         <item name="android:textColor">@color/white_80_percent</item>
     </style>
 
+    <style name="loading_retry_textstyle">
+        <item name="android:textSize">@dimen/text_size_36</item>
+        <item name="android:textColor">@color/white_80_percent</item>
+    </style>
+
     <style name="textstyle_40_b80">
         <item name="android:textSize">@dimen/text_size_40</item>
         <item name="android:textColor">@color/black_80_percent</item>

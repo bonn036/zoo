@@ -6,7 +6,7 @@
         res/values-v11/styles.xml on API 14+ devices.
     -->
 
-    <style name="AppTheme" parent="android:Theme.NoTitleBar">
+    <style name="AppTheme" parent="MyAppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>

@@ -1,7 +1,13 @@
 <resources>
 
+    <style name="MyAppBaseTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:textSize">@dimen/text_size_80</item>
+        <item name="android:textColor">@color/white_80_percent</item>
+        <item name="android:fontFamily">"miui"</item>
+    </style>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Black">
+    <style name="AppTheme" parent="MyAppBaseTheme">
         <!-- Customize your theme here. -->
     </style>
 

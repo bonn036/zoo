@@ -3,6 +3,7 @@ package com.mmnn.bonn036.zoo;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.mmnn.bonn036.zoo.utils.DateTimeUtils;
 import com.mmnn.bonn036.zoo.utils.DeviceUtils;
@@ -43,6 +45,17 @@ public class PlaygroundActivity extends Activity {
 //        mPlayGround = (FrameLayout) rootView;
 //		View rootView = ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0);
 //		View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
+
+        TextView tv = (TextView) findViewById(R.id.sd_text);
+        Typeface mMiuiTypeface = Typeface.createFromAsset(getAssets(), "fonts/miui_ex_nomal_0.ttf");
+        tv.setTypeface(mMiuiTypeface);
+        TextView tv2 = (TextView) findViewById(R.id.sd_text2);
+        Typeface mCXHTypeface = Typeface.createFromAsset(getAssets(), "fonts/chaoxihei.ttf");
+        tv2.setTypeface(mCXHTypeface);
+        TextView tv3 = (TextView) findViewById(R.id.sd_text3);
+        Typeface mPxTypeface = Typeface.createFromAsset(getAssets(), "fonts/fangzhengxiangsu12.ttf");
+        tv3.setTypeface(mPxTypeface);
+
 
         mPlayGround = (Sea) findViewById(R.id.sea);
 
@@ -85,7 +98,11 @@ public class PlaygroundActivity extends Activity {
     }
 
     private void test() {
+        testProvider();
 //        startActivity(new Intent(this, ShortcutActivity.class));
+        if (mElephant.equals(null)) {
+
+        }
         DeviceUtils.getScreenSize(this);
         Log.d(TAG, "========test=========" + DateTimeUtils.getCurFormattedDateTime());
         System.out.println(Calendar.getInstance().getTime());
@@ -130,9 +147,9 @@ public class PlaygroundActivity extends Activity {
     private void testProvider() {
         try {
             String[] projection = new String[]{"controller_id", "controller_name", "device_type", "intent_action"};
-            Cursor cursor = getContentResolver().query(Uri.parse(CONTROLLER_AUTHORITY + MI_WEATHER), projection, null, null, null);
-            Log.d(TAG, "cursor = " + cursor);
+            Cursor cursor = getContentResolver().query(Uri.parse(CONTROLLER_AUTHORITY /*+ MI_WEATHER*/), projection, null, null, null);
             if (cursor != null) {
+                Log.d(TAG, "cursor = " + cursor.getCount());
                 cursor.moveToFirst();
                 while (cursor.moveToNext()) {
                 }

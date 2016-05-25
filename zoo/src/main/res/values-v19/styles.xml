@@ -28,4 +28,12 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
+    <style name="myRecyclerViewStyle">
+        <!-- NOTE: clipChildren should be false on API level 11 or later -->
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
 </resources>

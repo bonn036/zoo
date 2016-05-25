@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "onItemClick: " + "position: " + position + " id: " + id);
                 switch ((int) id) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, PlaygroundActivity.class));
+                        startActivity(new Intent(MainActivity.this, FallActivity.class));
                         break;
 //				case 1:
 //					startActivity(new Intent(MainActivity.this, LocationActivity.class));

@@ -36,36 +36,6 @@ class AlreadyExpandedGroupsExpandableExampleAdapter
 
     private RecyclerViewExpandableItemManager mExpandableItemManager;
 
-    // NOTE: Make accessible with short name
-    private interface Expandable extends ExpandableItemConstants {
-    }
-
-    public static abstract class MyBaseViewHolder extends AbstractExpandableItemViewHolder {
-        public FrameLayout mContainer;
-        public TextView mTextView;
-
-        public MyBaseViewHolder(View v) {
-            super(v);
-            mContainer = (FrameLayout) v.findViewById(R.id.container);
-            mTextView = (TextView) v.findViewById(android.R.id.text1);
-        }
-    }
-
-    public static class MyGroupViewHolder extends MyBaseViewHolder {
-        public ExpandableItemIndicator mIndicator;
-
-        public MyGroupViewHolder(View v) {
-            super(v);
-            mIndicator = (ExpandableItemIndicator) v.findViewById(R.id.indicator);
-        }
-    }
-
-    public static class MyChildViewHolder extends MyBaseViewHolder {
-        public MyChildViewHolder(View v) {
-            super(v);
-        }
-    }
-
     public AlreadyExpandedGroupsExpandableExampleAdapter(
             RecyclerViewExpandableItemManager expandableItemManager) {
 
@@ -134,11 +104,7 @@ class AlreadyExpandedGroupsExpandableExampleAdapter
             boolean isExpanded;
             boolean animateIndicator = ((expandState & Expandable.STATE_FLAG_HAS_EXPANDED_STATE_CHANGED) != 0);
 
-            if ((expandState & Expandable.STATE_FLAG_IS_EXPANDED) != 0) {
-                isExpanded = true;
-            } else {
-                isExpanded = false;
-            }
+            isExpanded = (expandState & Expandable.STATE_FLAG_IS_EXPANDED) != 0;
 
 //            holder.mContainer.setBackgroundResource(bgResId);
             holder.mIndicator.setExpandedState(isExpanded, animateIndicator);
@@ -162,11 +128,38 @@ class AlreadyExpandedGroupsExpandableExampleAdapter
     @Override
     public boolean onCheckCanExpandOrCollapseGroup(MyGroupViewHolder holder, int groupPosition, int x, int y, boolean expand) {
         // check is enabled
-        if (!(holder.itemView.isEnabled() && holder.itemView.isClickable())) {
-            return false;
-        }
+        return holder.itemView.isEnabled() && holder.itemView.isClickable();
 
-        return true;
+    }
+
+    // NOTE: Make accessible with short name
+    private interface Expandable extends ExpandableItemConstants {
+    }
+
+    public static abstract class MyBaseViewHolder extends AbstractExpandableItemViewHolder {
+        public FrameLayout mContainer;
+        public TextView mTextView;
+
+        public MyBaseViewHolder(View v) {
+            super(v);
+            mContainer = (FrameLayout) v.findViewById(R.id.container);
+            mTextView = (TextView) v.findViewById(android.R.id.text1);
+        }
+    }
+
+    public static class MyGroupViewHolder extends MyBaseViewHolder {
+        public ExpandableItemIndicator mIndicator;
+
+        public MyGroupViewHolder(View v) {
+            super(v);
+            mIndicator = (ExpandableItemIndicator) v.findViewById(R.id.indicator);
+        }
+    }
+
+    public static class MyChildViewHolder extends MyBaseViewHolder {
+        public MyChildViewHolder(View v) {
+            super(v);
+        }
     }
 
     // NOTE: This method is called from Fragment

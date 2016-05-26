@@ -32,36 +32,6 @@ class ExpandableExampleAdapter
         extends AbstractExpandableItemAdapter<ExpandableExampleAdapter.MyGroupViewHolder, ExpandableExampleAdapter.MyChildViewHolder> {
     private static final String TAG = "MyExpandableItemAdapter";
 
-    // NOTE: Make accessible with short name
-    private interface Expandable extends ExpandableItemConstants {
-    }
-
-    public static abstract class MyBaseViewHolder extends AbstractExpandableItemViewHolder {
-        public FrameLayout mContainer;
-        public TextView mTextView;
-
-        public MyBaseViewHolder(View v) {
-            super(v);
-            mContainer = (FrameLayout) v.findViewById(R.id.container);
-            mTextView = (TextView) v.findViewById(android.R.id.text1);
-        }
-    }
-
-    public static class MyGroupViewHolder extends MyBaseViewHolder {
-        public ExpandableItemIndicator mIndicator;
-
-        public MyGroupViewHolder(View v) {
-            super(v);
-            mIndicator = (ExpandableItemIndicator) v.findViewById(R.id.indicator);
-        }
-    }
-
-    public static class MyChildViewHolder extends MyBaseViewHolder {
-        public MyChildViewHolder(View v) {
-            super(v);
-        }
-    }
-
     public ExpandableExampleAdapter() {
         // ExpandableItemAdapter requires stable ID, and also
         // have to implement the getGroupItemId()/getChildItemId() methods appropriately.
@@ -85,7 +55,7 @@ class ExpandableExampleAdapter
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
-        return groupPosition*10+childPosition;
+        return groupPosition * 10 + childPosition;
     }
 
     @Override
@@ -129,11 +99,7 @@ class ExpandableExampleAdapter
             boolean isExpanded;
             boolean animateIndicator = ((expandState & Expandable.STATE_FLAG_HAS_EXPANDED_STATE_CHANGED) != 0);
 
-            if ((expandState & Expandable.STATE_FLAG_IS_EXPANDED) != 0) {
-                isExpanded = true;
-            } else {
-                isExpanded = false;
-            }
+            isExpanded = (expandState & Expandable.STATE_FLAG_IS_EXPANDED) != 0;
 
 //            holder.mContainer.setBackgroundResource(bgResId);
             holder.mIndicator.setExpandedState(isExpanded, animateIndicator);
@@ -162,10 +128,37 @@ class ExpandableExampleAdapter
 //        }
 
         // check is enabled
-        if (!(holder.itemView.isEnabled() && holder.itemView.isClickable())) {
-            return false;
-        }
+        return holder.itemView.isEnabled() && holder.itemView.isClickable();
 
-        return true;
+    }
+
+    // NOTE: Make accessible with short name
+    private interface Expandable extends ExpandableItemConstants {
+    }
+
+    public static abstract class MyBaseViewHolder extends AbstractExpandableItemViewHolder {
+        public FrameLayout mContainer;
+        public TextView mTextView;
+
+        public MyBaseViewHolder(View v) {
+            super(v);
+            mContainer = (FrameLayout) v.findViewById(R.id.container);
+            mTextView = (TextView) v.findViewById(android.R.id.text1);
+        }
+    }
+
+    public static class MyGroupViewHolder extends MyBaseViewHolder {
+        public ExpandableItemIndicator mIndicator;
+
+        public MyGroupViewHolder(View v) {
+            super(v);
+            mIndicator = (ExpandableItemIndicator) v.findViewById(R.id.indicator);
+        }
+    }
+
+    public static class MyChildViewHolder extends MyBaseViewHolder {
+        public MyChildViewHolder(View v) {
+            super(v);
+        }
     }
 }

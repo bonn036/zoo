@@ -13,7 +13,7 @@
         android:background="@drawable/about_item_selector"
         android:orientation="horizontal">
 
-        <com.mmnn.bonn036.zoo.view.wheel.NumberPicker
+        <com.mmnn.zoo.view.wheel.NumberPicker
             android:id="@+id/slelect_data_accurate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             numberpicker:solidColor="@android:color/transparent" />
 
 
-        <com.mmnn.bonn036.zoo.view.wheel.NumberPicker
+        <com.mmnn.zoo.view.wheel.NumberPicker
             android:id="@+id/slelect_time_accurate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

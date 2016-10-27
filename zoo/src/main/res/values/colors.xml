@@ -34,6 +34,8 @@
     <color name="blue">#7ec1ff</color>
     <color name="red">#e62f17</color>
 
+    <color name="device_green">#31c27c</color>
+
     <!-- Text color -->
     <color name="primary_text_color">#4c4c4c</color>
     <color name="secondary_text_color">#b2b2b2</color>

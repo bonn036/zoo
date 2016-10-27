@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mmnn.zoo.view.chart.StatView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="183dp"
+    android:background="@drawable/corners_green_bg"
+    android:paddingBottom="6dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="6dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        android:textColor="@android:color/white"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="4dp"
+        android:text="日均"
+        android:textColor="@android:color/white"
+        android:textSize="9dp" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/title"
+        android:text="636"
+        android:textColor="@android:color/white"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/sub_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/sub_title"
+        android:text="日总计数"
+        android:textColor="@android:color/white"
+        android:textSize="9dp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="44dp"
+        android:background="@color/white_80_percent" />
+
+    <com.mmnn.zoo.view.chart.LineChartView
+        android:id="@+id/chart_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider"
+        android:layout_marginTop="6dp" />
+
+</com.mmnn.zoo.view.chart.StatView>

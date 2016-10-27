@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/group_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_88"
+        android:background="@color/white_80_percent"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/margin_75" />
+
+    <RelativeLayout
+        android:id="@+id/content_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_192"
+        android:background="@drawable/list_item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/device_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_64" />
+
+        <ImageView
+            android:id="@+id/expend_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_70"
+            android:src="@drawable/ic_arrow_down" />
+
+        <ImageView
+            android:id="@+id/device_type_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_70" />
+
+        <TextView
+            android:id="@+id/subtitle_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_38"
+            android:layout_toLeftOf="@id/expend_icon"
+            android:ellipsize="marquee"
+            android:singleLine="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_28"
+            android:layout_toLeftOf="@id/subtitle_r"
+            android:layout_toRightOf="@id/device_icon">
+
+            <LinearLayout
+                android:id="@+id/title_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/device_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_12"
+                    android:ellipsize="marquee"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/title_group"
+                android:layout_below="@id/title_group"
+                android:layout_marginTop="@dimen/margin_10"
+                android:ellipsize="marquee"
+                android:singleLine="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/btn_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/black_70_percent"
+            android:textSize="@dimen/text_size_36" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/item_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+</LinearLayout>

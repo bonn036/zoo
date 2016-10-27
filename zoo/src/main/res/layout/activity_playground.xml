@@ -2,47 +2,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.mmnn.bonn036.zoo.view.widget.PullDownRefreshListView
+    <com.mmnn.zoo.view.widget.PullDownRefreshListView
         android:id="@+id/main_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_100"
         android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/margin_100"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/sd_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="这是一段文字" />
+
         <TextView
             android:id="@+id/sd_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="这是一段文字"
-            android:typeface="normal"/>
+            android:typeface="normal" />
+
         <TextView
             android:id="@+id/sd_text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="这是一段文字"/>
+            android:text="这是一段文字" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="这是一段文字"
-            android:fontFamily="miui-thin" />
+            android:fontFamily="miui-thin"
+            android:text="这是一段文字" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="这是一段文字"
-            android:fontFamily="miui-light" />
+            android:fontFamily="miui-light"
+            android:text="这是一段文字" />
     </LinearLayout>
 
-    <com.mmnn.bonn036.zoo.view.test.Sea
+    <com.mmnn.zoo.view.test.Sea
         android:id="@+id/sea"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

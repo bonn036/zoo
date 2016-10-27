@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mmnn.bonn036.zoo"
+    package="com.mmnn.zoo"
     android:versionCode="100"
     android:versionName="1.0.0">
 
@@ -55,6 +55,11 @@
         </activity>
 
         <activity
+            android:name=".DrawerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
             android:name=".ShortcutActivity"
             android:screenOrientation="portrait" />
 
@@ -66,14 +71,22 @@
             android:name=".activity.WebViewActivity"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".FallActivity" />
+        <activity android:name=".FallActivity" />
 
-        <activity
-            android:name=".expendable.AlreadyExpandedGroupsExpandableExampleActivity" />
+        <activity android:name=".expendable.AlreadyExpandedGroupsExpandableExampleActivity" />
 
-        <activity
-            android:name=".expendable.ExpandableExampleActivity" />
+        <activity android:name=".expendable.ExpandableExampleActivity" />
+
+        <service
+            android:name=".service.MyService"
+            android:exported="true"
+            android:label="MMNNService"
+            android:process=":mmnn">
+            <intent-filter>
+                <action android:name="com.mmnn.zoo.MyDo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
 
     </application>
 

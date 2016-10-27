@@ -20,7 +20,7 @@
 
     <view
         android:id="@+id/np__numberpicker_input"
-        class="com.mmnn.bonn036.zoo.view.wheel.NumberPicker$CustomEditText"
+        class="com.mmnn.zoo.view.wheel.NumberPicker$CustomEditText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@null"

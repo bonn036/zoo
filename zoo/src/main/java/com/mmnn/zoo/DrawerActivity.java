@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.Process;
 import android.os.RemoteException;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,11 +27,13 @@ public class DrawerActivity extends Activity
 
     private DrawerLayout mDrawerLayout;
     private IMyDo mMyDo;
+    private Messenger mMessenger;
     private ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             mMyDo = IMyDo.Stub.asInterface(service);
+//            mMessenger = new Messenger(service);
         }
 
         @Override
@@ -90,7 +95,7 @@ public class DrawerActivity extends Activity
     @Override
     protected void onStop() {
         super.onStop();
-        if (mMyDo != null) {
+        if (mMyDo != null || mMessenger != null) {
             unbindService(mConnection);
         }
     }
@@ -108,6 +113,15 @@ public class DrawerActivity extends Activity
             try {
                 MyGift gift = mMyDo.onRead();
                 Log.e("MMNNService", "read from: " + gift.getPid() + " " + gift.getmName());
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+        if (mMessenger != null) {
+            try {
+                Message msg = Message.obtain(null, 9036);
+                msg.arg1 = Process.myPid();
+                mMessenger.send(msg);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

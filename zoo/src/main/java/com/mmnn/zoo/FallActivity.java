@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 /**
- * Created by Administrator on 2016/5/25.
+ * Created by dz on 2016/5/25.
  */
 public class FallActivity extends Activity {
     private RecyclerView mRecyclerView;

@@ -5,7 +5,7 @@ import android.os.Environment;
 import java.io.File;
 
 /**
- * Created by Administrator on 2016/3/10.
+ * Created by dz on 2016/3/10.
  */
 public class SdcardHelper {
 

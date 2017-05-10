@@ -11,7 +11,7 @@ import com.h6ah4i.android.widget.advrecyclerview.utils.WrapperAdapterUtils;
 import com.mmnn.zoo.R;
 
 /**
- * Created by Administrator on 2016/5/25.
+ * Created by dz on 2016/5/25.
  */
 public class AlreadyExpandedGroupsExpandableExampleActivity extends Activity {
 

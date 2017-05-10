@@ -35,7 +35,7 @@ public class MyGift implements Parcelable {
         return mPid;
     }
 
-    public String getmName() {
+    public String getName() {
         return mName;
     }
 

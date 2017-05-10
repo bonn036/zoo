@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * Created by Administrator on 2016/5/25.
+ * Created by dz on 2016/5/25.
  */
 public class FallAdapter extends RecyclerView.Adapter<FallAdapter.ViewHolder> {
 

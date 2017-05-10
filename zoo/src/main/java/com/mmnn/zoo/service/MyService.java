@@ -9,7 +9,6 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.Process;
 import android.os.RemoteException;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -31,7 +30,7 @@ public class MyService extends Service {
         @Override
         public boolean onWrite(MyGift myGift) throws RemoteException {
             if (myGift != null) {
-                Log.e("MMNNService", "write from: " + myGift.getPid() + " " + myGift.getmName());
+                Log.e("MMNNService", "write from: " + myGift.getPid() + " " + myGift.getName());
                 return true;
             }
             return false;
@@ -59,7 +58,6 @@ public class MyService extends Service {
         }
     });
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
 //        return mBinder;

@@ -27,6 +27,7 @@ import java.util.Calendar;
 
 public class PlaygroundActivity extends Activity {
 
+    public final static String SRC_LOCKSCREEN = "lock_screen";
     private final static String TAG = PlaygroundActivity.class.getCanonicalName();
     private final static String CONTROLLER_AUTHORITY = "content://com.xiaomi.mitv.phone.remotecontroller.provider.LockScreenProvider";
     private final static String MI_WEATHER = "/mi_weather";
@@ -136,7 +137,7 @@ public class PlaygroundActivity extends Activity {
 
     private void gotoController() {
         Intent intent = new Intent(ACTION_CONTROLLER_MAIN);
-        intent.putExtra(EXTRA_CALL_FROM, SRC_MIHOME);
+        intent.putExtra(EXTRA_CALL_FROM, SRC_LOCKSCREEN);
         intent.putExtra(EXTRA_CONTROLLER_ID, 3);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         Log.d(TAG, "startIrController startActivity " + intent);

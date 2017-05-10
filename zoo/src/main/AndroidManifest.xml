@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mmnn.zoo"
-    android:versionCode="100"
-    android:versionName="1.0.0">
+    package="com.mmnn.zoo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -31,50 +29,47 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".PlaygroundActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".DrawerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".ShortcutActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".QRActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".NativeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.WebViewActivity"
             android:screenOrientation="portrait" />
-
         <activity android:name=".FallActivity" />
-
         <activity android:name=".expendable.AlreadyExpandedGroupsExpandableExampleActivity" />
-
         <activity android:name=".expendable.ExpandableExampleActivity" />
 
         <service
@@ -84,9 +79,14 @@
             android:process=":mmnn">
             <intent-filter>
                 <action android:name="com.mmnn.zoo.MyDo" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".PagerActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
     </application>
 

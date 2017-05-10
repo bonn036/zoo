@@ -283,5 +283,8 @@
     <!--  test app-->
     <dimen name="main_page_button_width">@dimen/margin_800</dimen>
     <dimen name="main_page_button_height">@dimen/margin_300</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 
 </resources>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 /**
- * Created by Administrator on 2016/2/24.
+ * Created by dz on 2016/2/24.
  */
 public class HanziUtils {
 

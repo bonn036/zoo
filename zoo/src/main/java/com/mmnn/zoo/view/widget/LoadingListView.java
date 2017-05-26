@@ -57,7 +57,7 @@ public class LoadingListView extends RelativeLayout {
     private void createView() {
 
         mListView = new LoadMoreListView(getContext());
-        mListView.setId(101);
+        mListView.setId(View.generateViewId());
         mListView.setDividerHeight(0);
         mListView.setDivider(null);
         mListView.setCacheColorHint(getResources().getColor(android.R.color.transparent));

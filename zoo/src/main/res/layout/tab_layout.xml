@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_80_percent"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/tab_main"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:onClick="onClick">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/margin_13"
+                android:drawableTop="@drawable/home_icon_user"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/tab_main"
+                android:textAppearance="@style/home_tab_text_style" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_notify_reddot"
+                android:visibility="gone" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:onClick="onClick">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/margin_13"
+                android:drawableTop="@drawable/home_icon_user"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/tab_sub"
+                android:textAppearance="@style/home_tab_text_style" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_notify_reddot"
+                android:visibility="gone" />
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

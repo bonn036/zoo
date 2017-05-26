@@ -26,5 +26,10 @@
         <item name="android:textColor">@color/black_80_percent</item>
     </style>
 
+    <style name="home_tab_text_style">
+        <item name="android:textColor">@color/home_tab_text</item>
+        <item name="android:textSize">@dimen/text_size_30</item>
+    </style>
+
 
 </resources>

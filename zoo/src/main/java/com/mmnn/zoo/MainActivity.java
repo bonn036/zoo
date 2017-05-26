@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.mmnn.zoo.activity.WebViewActivity;
+import com.mmnn.zoo.app.HomeActivity;
 
 import java.util.ArrayList;
 
@@ -59,6 +60,9 @@ public class MainActivity extends Activity {
                 case 7:
                     startActivity(new Intent(MainActivity.this, PagerActivity.class));
                     break;
+                case 8:
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    break;
                 default:
                     break;
             }
@@ -75,6 +79,7 @@ public class MainActivity extends Activity {
         titleList.add(getString(R.string.qrcode));
         titleList.add(getString(R.string.native_));
         titleList.add(getString(R.string.pager));
+        titleList.add(getString(R.string.home_page));
         return titleList;
     }
 

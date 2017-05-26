@@ -55,4 +55,7 @@
 
     <color name="about_item_select">#f4f4f4</color>
 
+
+    <color name="main_theme_divider_color">#e5e5e5</color>
+
 </resources>

@@ -15,6 +15,7 @@
     <string name="qrcode">二维码</string>
     <string name="native_">Native</string>
     <string name="pager">pager</string>
+    <string name="home_page">Home</string>
 
     <string name="add_shortcut">创建快捷方式</string>
     <string name="del_shortcut">删除快捷方式</string>
@@ -44,5 +45,10 @@
 
     <string name="action_sure">ok</string>
     <string name="action_cancel">cancel</string>
+
+
+    <string name="tab_main">tab main</string>
+    <string name="tab_sub">tab sub</string>
+
 
 </resources>

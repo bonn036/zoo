@@ -17,6 +17,7 @@
     <dimen name="margin_9">3dp</dimen>
     <dimen name="margin_10">3.33dp</dimen>
     <dimen name="margin_12">4dp</dimen>
+    <dimen name="margin_13">4.33dp</dimen>
     <dimen name="margin_15">5dp</dimen>
     <dimen name="margin_17">5.66dp</dimen>
     <dimen name="margin_18">6dp</dimen>
@@ -118,6 +119,7 @@
     <dimen name="margin_150">50dp</dimen>
     <dimen name="margin_152">50.66dp</dimen>
     <dimen name="margin_153">51dp</dimen>
+    <dimen name="margin_154">51.33dp</dimen>
     <dimen name="margin_156">52dp</dimen>
     <dimen name="margin_159">53dp</dimen>
     <dimen name="margin_164">54.67dp</dimen>

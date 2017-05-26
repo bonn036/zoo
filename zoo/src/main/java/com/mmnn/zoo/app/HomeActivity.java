@@ -6,19 +6,49 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.SparseArray;
 import android.view.View;
 
+import com.facebook.react.LifecycleState;
+import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactRootView;
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
+import com.facebook.react.shell.MainReactPackage;
+import com.mmnn.zoo.BuildConfig;
 import com.mmnn.zoo.R;
 
-public class HomeActivity extends FragmentActivity implements View.OnClickListener {
+public class HomeActivity extends FragmentActivity implements View.OnClickListener, DefaultHardwareBackBtnHandler {
     public final static String TAG = HomeActivity.class.getCanonicalName();
 
     private SparseArray<BaseFragment> fragments = new SparseArray<>();
     private BaseFragment mCurFragment = null;
     private View mCurrentTab;
 
+    private ReactRootView mReactRootView;
+    private ReactInstanceManager mReactInstanceManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mReactRootView = new ReactRootView(this);
+
+        mReactInstanceManager = ReactInstanceManager.builder()
+                .setApplication(getApplication())
+                .setBundleAssetName("index.android.bundle")
+                .setJSMainModuleName("index.android")
+                .addPackage(new MainReactPackage())
+                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setInitialLifecycleState(LifecycleState.RESUMED)
+                .build();
+
+        mReactRootView.startReactApplication(mReactInstanceManager, "Zoo", null);
+
         initUI();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostResume(this, this);
+        }
     }
 
     private void initUI() {
@@ -75,5 +105,10 @@ public class HomeActivity extends FragmentActivity implements View.OnClickListen
 //        transaction.addToBackStack(null);
 //        transaction.commit();
 
+    }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -9,4 +9,9 @@
         android:layout_centerInParent="true"
         android:text="@string/tab_sub" />
 
+    <com.facebook.react.ReactRootView
+        android:id="@+id/rn_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </RelativeLayout>
